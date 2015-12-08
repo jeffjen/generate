@@ -1,0 +1,18 @@
+language: go
+
+go:
+    - tip
+    - 1.5.1
+    - 1.4.2
+
+script:
+    - go build
+    - go test -v ./...
+
+deploy:
+    provider: releases
+    api_key:
+        secure: dg3BfeswCybXf31v/9apkh6OLrZ4cJ68/0TUjCcnEPZUjIBvMo8/GFNx9qRByhwGhWP9MQr3oI+B5GaaJcaLE++OisjplL0rOaUTwFi4bzph1Qvh6R617ZHBEFGGYvTOCAlES62fXzEZy11VUh1Nx2PY+4mhkxnou083+C/54MRWand/yPSYNeurv6XKOdN4t4VKz5dZhPczCeyGIheKTeFzScJ3oDNgrMDjTRF2gxYjbNr50tSHByMi1CEoQ01JsmupN4+Jihrnc1ukSdqohM+L08AFYsbu9zirkn3lSGWbgP1+X9PKBG++vi/JaGYkaZcqOaW7+AK6pb2cN2auPOv0rtMiavufI4WV8Hz+aBuKpGHboAFBr9PnxM7VSO9Lzfaz7PavgavM1o9z/db0dJWGU+0ORKGRADT6yhchoY+91xX6P39ru4hBTbHaNtt1uE+wLoE3cxd0Jzgf+G8/LmJjMXeCgxqhmYG0Dzw+Q7ciWN9eR46rRIpOtZ0P+wj3lSV8JSXrd8HwDuNXeoWK2p5mIxWSIo5Nv1hhk2zWECKoUfr3+vZHDe9d53nfzqSqa8FaLw56MtuJmTxqtglloTUClS3sI0waf1Iw3d370MZaQCHG9eLCfUHthXZwEgnRv+rO1sey2bKhBW2r6++4fCU/cdYdYK002QTsjrzhRq0=
+    file: generate
+    on:
+        tags: true
